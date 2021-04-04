@@ -1,0 +1,79 @@
+<div style="border-style: solid; width: 70%;">
+  <h2 style="align-self: centers; padding-left:50%">Trade Form </h2>
+  <br>
+
+  <form [formGroup]="tradeForm" action="">
+
+    <div style="padding-top: 10px; padding-left: 30px; ">
+      <label for="tradeId" class="label-style">Trade Id</label>
+      <label for="version" class="label-style">Version</label>
+      <label for="counterParty" class="label-style">Counter-Party Id</label>
+      <label for="bookId" class="label-style">Book-Id</label>
+      <label for="maturityDate" class="label-style">Maturity Date</label>
+      <label for="createdDate" class="label-style">Created Date</label>
+      <label for="expiredFlag" class="label-style">Expired</label>
+      <br/> <br/>
+    </div>
+
+    <div style="padding-left: 30px;">
+      <input type="text" name="tradeId" id="tradeId" formControlName="tradeId" style="width: 9%; margin-right: 3%;">
+      <input type="text" name="version" id="version" formControlName="version" style="width: 8%; margin-right: 4%;">
+      <input type="text" name="counterParty" id="counterParty" formControlName="counterParty" style="width: 13%; margin-right: 3%;">
+      <input type="text" name="bookId" id="bookId" formControlName="bookId" style="width: 9%; margin-right: 3%;">
+      <input type="date" name="maturityDate" id="maturityDate" formControlName="maturityDate" style="width: 12%; margin-right: 3%;">
+      <input type="text" name="create_date" id="create_date" formControlName="createdDate" style="width: 12%; margin-right: 3%;" readonly>
+      <input type="text" name="expiredFlag" id="expiredFlag" formControlName="expiredFlag" style="width: 8%; margin-right: 3%;">
+    </div>
+    <br/> <br/>
+    <button class="button" (click) = "onSubmit()" style="margin-left: 35%;" >Submit</button>   <button class="button" (click) = "fetchTrade()" style="margin-left: 3%;" >Fetch Trades</button>
+    <br><br><br>
+  </form>
+</div>
+
+
+
+
+<br>
+<hr>
+<br><br><br>
+
+<!-- <div>
+  <label for="tradeId" class="label-style">Trade Id</label>
+  <label for="version" class="label-style">Version</label>
+  <label for="counterParty" class="label-style">Counter-Party Id</label>
+  <label for="bookId" class="label-style">Book-Id</label>
+  <label for="maturityDate" class="label-style">Maturity Date</label>
+  <label for="createdDate" class="label-style">Created Date</label>
+  <label for="expiredFlag" class="label-style">Expired</label>
+  <br/> <br/>
+</div>
+
+<div >
+
+</div> -->
+
+<div style="width: 70%; padding-left: 13%;">
+  <table border="1px">
+    <thead>
+        <th>Trade Id</th>
+        <th>Version</th>
+        <th>Counter-Party Id</th>
+        <th>Book-Id</th>
+        <th>Maturity</th>
+        <th>Created Date</th>
+        <th>Expired</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let fetchedData of fetchedData">
+            <td>{{fetchedData.tradeId}}</td>
+            <td>{{fetchedData.version}}</td>
+            <td>{{fetchedData.counterParty}}</td>
+            <td>{{fetchedData.bookId}}</td>
+            <td>{{fetchedData.maturityDate}}</td>
+            <td>{{fetchedData.createdDate}}</td>
+            <td>{{fetchedData.expiredFlag}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
